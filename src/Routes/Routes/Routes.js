@@ -4,6 +4,8 @@ import CourseDetails from "../../Components/CourseDetails/CourseDetails";
 import Courses from "../../Components/Courses/Courses";
 import FAQ from "../../Components/FAQ/FAQ";
 import Home from "../../Components/Home/Home";
+import Login from "../../Components/Login/Login";
+import Register from "../../Components/Register/Register";
 import SingleCourses from "../../Components/SingleCourses/SingleCourses";
 import Main from "../../Layout/Main";
 
@@ -35,6 +37,15 @@ export const routes = createBrowserRouter([
                 path: '/coursemore/:id',
                 // loader:async({params})=>fetch(''),
                 element: <CourseDetails></CourseDetails>
+            },
+            {
+                path: '/',
+                element:<Login></Login>
+            },
+            {
+                path: '/register',
+                element:<Register></Register>
+
             }
         ]
         
