@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import RightSideNav from '../RightSideNav/RightSideNav';
 const Register = () => {
@@ -25,6 +26,7 @@ const Register = () => {
                 form.reset()
                 handleUpdateUserProfile(name, photoURL)
                 handleEmailVarification()
+                swal("Registration Successfull", "Your registration was successfull please log in now", "success");
             })
             .catch(error => {
                 console.error(error)
@@ -55,6 +57,7 @@ const Register = () => {
             <div className='form-body text-start w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
+                    
                     <Form.Control name="name" type="text" placeholder="enter your name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
