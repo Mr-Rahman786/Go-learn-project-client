@@ -3,7 +3,9 @@
    padding: 20px;
    margin: 10px;
 }
-
+.icons-main FaStar{
+    color: gold;
+}
 .singleCourses img{
     width: 100%
 }
@@ -16,6 +18,10 @@
 width: 100%;
 border: none;
 }
-.primary-btn a{
-    
+@media screen and (max-width:376px) {
+    .singleCourses{
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+    }
 }

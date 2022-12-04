@@ -1,0 +1,4 @@
+.righsidenav{
+    display: flex;
+    flex-direction: row;
+}
