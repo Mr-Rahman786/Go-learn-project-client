@@ -1,3 +1,21 @@
+.singleCourses{
+   /* border-bottom: 2px solid red; */
+   padding: 20px;
+   margin: 10px;
+}
+
 .singleCourses img{
-    width: 50%;
+    width: 100%
+}
+.singleCourses a{
+    text-decoration: none;
+    color: white;
+}
+
+.primary-btn{
+width: 100%;
+border: none;
+}
+.primary-btn a{
+    
 }

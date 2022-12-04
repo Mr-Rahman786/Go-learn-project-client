@@ -1,0 +1,8 @@
+.mainCourseDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.remove-text a {
+    text-decoration: none;
+}

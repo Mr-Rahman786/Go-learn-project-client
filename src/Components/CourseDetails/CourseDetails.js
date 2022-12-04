@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import './CourseDetails.css'
+
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 const CourseDetails = () => {
 
@@ -12,11 +17,23 @@ const CourseDetails = () => {
             .then(res => res.json())
             .then(data => setCorses(data))
     }, [id])
-    console.log(corses)
+    // console.log(corses)
 
     return (
-        <div>
-            <img src={corses.img} alt="" />
+        <div className=''>
+            <Card className='w-50 mx-auto remove-text mainCourseDetails'>
+                {/* <Card.Img src="holder.js/100px180" /> */}
+                <img src={img} alt="" />
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>
+                        {details}
+                    </Card.Text>
+                    {/* <Button variant="primary"><Link to="/courses"></Link>Back to Courses</Button>
+                     */}
+                    <Link to="/courses">Go to courses</Link>
+                </Card.Body>
+            </Card>
         </div>
     );
 };

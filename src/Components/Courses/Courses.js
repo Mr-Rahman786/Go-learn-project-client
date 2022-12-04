@@ -12,8 +12,7 @@ const Courses = () => {
         .then(data=>setCourses(data))
     },[])
     return (
-        <div>
-            <h4>All courses{courses.length}</h4>
+        <div className='coourseContainer'>
             {
                 courses.map(course => <SingleCourses
                     course={course}
