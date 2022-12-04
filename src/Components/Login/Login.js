@@ -27,7 +27,12 @@ const Login = () => {
                 console.log(user)
                 form.reset()
                 setError('')
-                navigate(from,{replace:true})
+                if (user.emailVerified) {
+                    navigate(from, { replace: true })
+                }
+                else {
+                    swal("Sorry Email Not Verified", "Please Check email and Verified there", "error");
+                }
             })
             .catch(error => {
                 console.error(error)

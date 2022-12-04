@@ -7,6 +7,7 @@ import FAQ from "../../Components/FAQ/FAQ";
 import Home from "../../Components/Home/Home";
 import Login from "../../Components/Login/Login";
 import Premium from "../../Components/Premium/Premium";
+import Profile from "../../Components/Profile/Profile";
 import Register from "../../Components/Register/Register";
 import SingleCourses from "../../Components/SingleCourses/SingleCourses";
 import Main from "../../Layout/Main";
@@ -56,6 +57,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/terms',
                 element:<CheackMe></CheackMe>
+            },
+            {
+                path: 'profile',
+                element:<PrivateRoute><Profile></Profile></PrivateRoute>
             }
         ]
         
