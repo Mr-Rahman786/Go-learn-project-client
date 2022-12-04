@@ -39,7 +39,7 @@ export const routes = createBrowserRouter([
                 element: <CourseDetails></CourseDetails>
             },
             {
-                path: '/',
+                path: '/login',
                 element:<Login></Login>
             },
             {

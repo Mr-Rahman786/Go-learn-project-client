@@ -10,7 +10,7 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
 
-    console.log(user)
+    // console.log(user)
     const providerLogin = (provider) => {
         return signInWithPopup(auth, provider)
     }
@@ -20,7 +20,6 @@ const AuthProvider = ({ children }) => {
    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log('check the current user', currentUser)
             setUser(currentUser);
         })
         return () => {

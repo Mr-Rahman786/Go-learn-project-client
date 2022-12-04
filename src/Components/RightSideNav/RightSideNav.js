@@ -15,7 +15,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 const RightSideNav = () => {
 
     const { providerLogin } = useContext(AuthContext);
-    console.log(providerLogin)
+    // console.log(providerLogin)
     const googleProvider= new GoogleAuthProvider()
     // google sign in 
 

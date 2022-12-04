@@ -1,0 +1,7 @@
+.form-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.form-body{
+    padding: 20px;
+}
