@@ -8,11 +8,15 @@ import RightSideNav from '../RightSideNav/RightSideNav';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
-import { FaUser } from 'react-icons/fa';
+import { FaUser} from 'react-icons/fa';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-
-    
+    const handleSignOut = () => {
+        logOut()
+            .then(() => { })
+        .catch(error=>console.error(error))
+}
+  
 
     return (
         <Navbar className='navbar' collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -34,7 +38,7 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                         <span>{user?.displayName}</span>
-                                        <button>Log Out</button>
+                                        <button onClick={handleSignOut}>Log out</button>
                                     </>
                                     :
                                     <>
@@ -46,7 +50,7 @@ const Header = () => {
                         </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
                             {user?.photoURL ?
-                                <Image style={{ height: '25px' }} roundedCircle src={user.photoURL}></Image>
+                                <Image style={{ height: '25px' }} roundedCircle src={user?.photoURL}></Image>
                                 :
                                 <FaUser></FaUser>
                             }
