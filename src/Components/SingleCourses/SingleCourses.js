@@ -17,7 +17,7 @@ const SingleCourses = ({ course }) => {
 
     return (
         <div className='singleCourses'>
-            <Card >
+            <Card className='text-start'>
                 <Card.Title>{name}</Card.Title>
                 <img src={img} alt="" />
                 <Card.Body>
@@ -26,14 +26,11 @@ const SingleCourses = ({ course }) => {
                     <div className='d-flex justify-content-between align-items-center'>
                         <div>
                             <button className="primary-btn" onClick={() => handleSendData(id)}>
-                                <Link to={`/coursemore/${id}`}>See more</Link>
+                                <Link className='text-dark' to={`/coursemore/${id}`}>See more</Link>
                             </button>
                         </div>
                         <div className='d-flex justify-content-between align-items-center icons-main'>
-                            <FaStar></FaStar>
-                            <FaStar></FaStar>
-                            <FaStar></FaStar>
-                            <FaStar></FaStar>  {review}
+                            <FaStar className='text-warning'></FaStar>  {review}
                         </div>
                         <div className='d-flex justify-content-between align-items-center'>
                             <FaEye></FaEye>  {enrolled}
