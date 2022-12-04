@@ -17,21 +17,19 @@ const CourseDetails = () => {
             .then(res => res.json())
             .then(data => setCorses(data))
     }, [id])
-    // console.log(corses)
+    
 
     return (
         <div className=''>
             <Card className='w-50 mx-auto remove-text mainCourseDetails'>
-                {/* <Card.Img src="holder.js/100px180" /> */}
                 <img src={img} alt="" />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>
                         {details}
                     </Card.Text>
-                    {/* <Button variant="primary"><Link to="/courses"></Link>Back to Courses</Button>
-                     */}
                     <Link to="/courses">Go to courses</Link>
+                    <Link to={`/premium/${id}`}>Go to premium</Link>
                 </Card.Body>
             </Card>
         </div>

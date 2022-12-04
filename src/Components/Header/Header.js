@@ -19,7 +19,7 @@ const Header = () => {
   
 
     return (
-        <Navbar className='navbar' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='navbar container-fluid' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand ><Link to='courses'>Go Learn</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

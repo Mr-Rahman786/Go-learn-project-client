@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { Col, Container, Row } from 'react-bootstrap';
 import RightSideNav from '../RightSideNav/RightSideNav';
 const SingleCourses = ({ course }) => {
-    const { name, details, amount, enrolled, title, img, id, review } = course;
+    const { name, details, amount, enrolled, title, img, id, review ,view } = course;
     // console.log(course)
     const navigate = useNavigate();
 

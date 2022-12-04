@@ -1,13 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Components/Blog/Blog";
+import CheackMe from "../../Components/CheckMe/CheackMe";
 import CourseDetails from "../../Components/CourseDetails/CourseDetails";
 import Courses from "../../Components/Courses/Courses";
 import FAQ from "../../Components/FAQ/FAQ";
 import Home from "../../Components/Home/Home";
 import Login from "../../Components/Login/Login";
+import Premium from "../../Components/Premium/Premium";
 import Register from "../../Components/Register/Register";
 import SingleCourses from "../../Components/SingleCourses/SingleCourses";
 import Main from "../../Layout/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -20,7 +23,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: 'courses',
-                element:<Courses></Courses>
+                element: <Courses></Courses>
             },
             {
                 path:'news/:id'
@@ -35,7 +38,6 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/coursemore/:id',
-                // loader:async({params})=>fetch(''),
                 element: <CourseDetails></CourseDetails>
             },
             {
@@ -45,7 +47,15 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element:<Register></Register>
-
+            },
+            {
+                path: '/premium/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/corses-catagories/${params.id}`),
+                element: <PrivateRoute><Premium></Premium></PrivateRoute>
+            },
+            {
+                path: '/terms',
+                element:<CheackMe></CheackMe>
             }
         ]
         
