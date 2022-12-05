@@ -1,0 +1,8 @@
+.registration-main-body{
+    width: 50%;
+}
+@media screen and (max-width:376px) {
+    .registration-main-body{
+        width: 100%;
+    }
+}

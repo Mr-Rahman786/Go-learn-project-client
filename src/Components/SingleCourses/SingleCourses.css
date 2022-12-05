@@ -1,27 +1,44 @@
-.singleCourses{
-   /* border-bottom: 2px solid red; */
-   padding: 20px;
-   margin: 10px;
+.singleCourses {
+    /* border-bottom: 2px solid red; */
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid rgb(86, 86, 208);
+    border-radius: 20px;
+    box-shadow: 5px 4px 20px;
 }
-.icons-main FaStar{
-    color: gold;
+.contain{
+    border: none;
 }
-.singleCourses img{
+.singleCourses img {
     width: 100%
 }
-.singleCourses a{
+
+.singleCourses a {
     text-decoration: none;
     color: white;
 }
 
-.primary-btn{
-width: 100%;
-border: none;
+.primary-btn {
+    width: 100%;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 10px;
+    background-color: rgb(96, 96, 239);
 }
+.primary-btn Link{
+    color: white;
+    text-decoration: none;
+}
+.primary-btn Link:hover{
+    color: white;
+}
+
 @media screen and (max-width:376px) {
-    .singleCourses{
+    .singleCourses {
+        width: 100%;
         padding: 0;
         margin: 0;
         margin-top: 20px;
+        margin-left: 10%;
     }
 }

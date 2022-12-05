@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -7,7 +7,13 @@ import RightSideNav from '../RightSideNav/RightSideNav';
 import './Login.css'
 import swal from 'sweetalert';
 
+import ReactSwitch from 'react-switch';
+
+export const ThemeContext = createContext(null)
+
+
 const Login = () => {
+    const [theme, setTheme] = useState("light");
     const [error, setError] = useState('');
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -40,35 +46,46 @@ const Login = () => {
         })
 
     }
-    return (
-        <Form onSubmit={handleSubmit} className='form-container mx-auto'>
-            <div className='form-body text-start w-50 mx-auto'>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control name="email" type="email" placeholder="Enter email" required />
-                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control name="password" type="password" placeholder="Password" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                
-                <Button variant="primary" type="submit">
-                    Log in
-                </Button>
-                <Form.Text className='text-danger'>
-                    {error}
-                </Form.Text>
-            </div>
-            <div>
-                <div className='d-none d-lg-block'>
-                    <RightSideNav></RightSideNav>
+    const toogleTheme = () => {
+        setTheme((curr)=>(curr==="light"?"dark":"light"))
+    }
+
+    return (
+        <ThemeContext.Provider value={{ theme, toogleTheme }}>
+            <Form id={theme} onSubmit={handleSubmit} className='form-container mx-auto main'>
+                <div className='form-body text-start form-main-body  mx-auto'>
+                    <ReactSwitch onChange={toogleTheme} checked={theme === "dark"} /> <h5>Toggole</h5>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control name="email" type="email" placeholder="Enter email" required />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control name="password" type="password" placeholder="Password" required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+
+                    <Button variant="primary" type="submit">
+                        Log in
+                    </Button>
+                    <Form.Text className='text-danger'>
+                        {error}
+                    </Form.Text>
+                    <div id='switch'>
+                        
+                    </div>
                 </div>
-            </div>
-        </Form>
+                <div>
+                    <div className='d-none d-lg-block'>
+                        <RightSideNav></RightSideNav>
+                    </div>
+                </div>
+            </Form>
+        </ThemeContext.Provider>
     );
 };
 

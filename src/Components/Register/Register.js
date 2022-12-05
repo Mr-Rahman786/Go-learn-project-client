@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import RightSideNav from '../RightSideNav/RightSideNav';
+import './Register.css'
 const Register = () => {
     const [error, setError] = useState('');
     const { creatUser, updateUserProfile, varifyEmail } = useContext(AuthContext);
@@ -54,7 +55,7 @@ const Register = () => {
 
     return (
         <Form onSubmit={handleSubmit} className='form-container mx-auto'>
-            <div className='form-body text-start w-50 mx-auto'>
+            <div className='form-body text-start registration-main-body mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     

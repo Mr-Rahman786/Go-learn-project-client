@@ -5,10 +5,15 @@
 .coourseContainer{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    /* border: 1px solid red; */
 }
 
 @media screen and (max-width:376px) {
     .coourseContainer{
         grid-template-columns: repeat(1,1fr);
+        width: 100%;
+    }
+    .corseContainer-main{
+        width: 100%;
     }
 }

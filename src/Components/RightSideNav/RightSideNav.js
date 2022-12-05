@@ -42,9 +42,9 @@ const RightSideNav = () => {
     return (
         <div className=' '>
             <ButtonGroup vertical>
-                <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-dark"><FaGoogle></FaGoogle> Login With Google</Button>
-                <Button onClick={handleGihubSignIn} className='mb-2' variant="outline-dark"> <FaGithub></FaGithub>Login With Github</Button>
-                <Button className='mb-2' variant="outline-dark"><FaFacebook></FaFacebook>  Login With Facebook</Button>
+                <Button onClick={handleGoogleSignIn} className='mb-2 login-there' variant="outline-primary"><FaGoogle></FaGoogle> Login With Google</Button>
+                <Button onClick={handleGihubSignIn} className='mb-2 login-there' variant="outline-primary"> <FaGithub></FaGithub>Login With Github</Button>
+                <Button className='mb-2' variant="outline-primary"><FaFacebook></FaFacebook>  Login With Facebook</Button>
             </ButtonGroup>
             <div>
                 <h4>Follow with us</h4>

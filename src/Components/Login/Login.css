@@ -1,7 +1,45 @@
 .form-container{
     display: grid;
     grid-template-columns: 4fr 1fr;
+    box-shadow: 10px 5px 20px black;
+    padding: 20px;
+    height: 700px;
+    border-radius: 20px;
+}
+.form-main-body{
+    width: 50%;
 }
 .form-body{
     padding: 20px;
+}
+
+#light{
+    background-color: white;
+}
+#dark{
+    background-color: rgb(67, 25, 67);
+    color: white;
+}
+
+#light .main{
+    background-color: #fff;
+}
+#dark .main{
+    background-color: rgb(126, 25, 126);
+    color: white;
+}
+/* #switch{
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+} */
+@media screen and (max-width:376px) {
+    .form-main-body{
+        width: 100%;
+    }
+    .form-container{
+        margin-left: 10%;
+    }
 }

@@ -1,0 +1,14 @@
+.blog-card{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); 
+   
+}
+.card-body{
+padding: 10px;
+    margin: 5%;
+}
+@media screen and (max-width:376px) {
+    .blog-card{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

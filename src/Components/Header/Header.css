@@ -29,9 +29,30 @@
     height: 50px;
     border-radius: 10px;
 }
+#light {
+    background-color: white;
+}
+
+#dark {
+    background-color: rgb(12, 3, 12);
+    color: white;
+}
+
+#light .theme {
+    background-color: #fff;
+}
+
+#dark .theme {
+    background-color: rgb(126, 25, 126);
+    color: white;
+}
 .size{
     font-size: 1.5rem;
 }
 .navbar {
     width: 100%;
+}
+
+@media screen and (max-width:376px) {
+  
 }
