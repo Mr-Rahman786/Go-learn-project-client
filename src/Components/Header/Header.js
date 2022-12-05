@@ -8,7 +8,8 @@ import RightSideNav from '../RightSideNav/RightSideNav';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
-import { FaUser} from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
+// import logo from '../Media/logo.svg'
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleSignOut = () => {
@@ -16,16 +17,13 @@ const Header = () => {
             .then(() => { })
         .catch(error=>console.error(error))
 }
-  
 
     return (
-        <Navbar className='navbar container-fluid' collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand ><Link to='courses'>Go Learn</Link></Navbar.Brand>
+        <Navbar collapseOnSelect expand="lg" bg="bg-none" variant="light">
+            <Container className='navbar-container'>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        {/* <Nav.Link to="home">Home</Nav.Link> */}
                         <Link to="home">Home</Link>
                         <Link to="courses">Courses</Link>
                         <Link to="faq">FAQ</Link>
@@ -33,12 +31,13 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">
+                        <Nav>
                             {
                                 user?.uid ?
                                     <>
-                                        <span>{user?.displayName}</span>
-                                        <button onClick={handleSignOut}>Log out</button>
+                                        <span className='displayname'>{user?.displayName}</span>
+                                        <button className='logout' onClick={handleSignOut}>Log out</button>
+                                        
                                     </>
                                     :
                                     <>
@@ -47,7 +46,7 @@ const Header = () => {
                                     </>
                             }
 
-                        </Nav.Link>
+                        </Nav>
                         <Nav to="/profile">
                             {user?.photoURL ?
                                 <Image
@@ -55,7 +54,7 @@ const Header = () => {
                                     roundedCircle
                                     src={user?.photoURL}></Image>
                                 :
-                                <FaUser></FaUser>
+                                <FaUser className='mt-4 size'></FaUser>
                             }
                         </Nav>
                     </Nav>

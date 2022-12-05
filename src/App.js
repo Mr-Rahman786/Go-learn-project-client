@@ -7,7 +7,7 @@ import { ToastHeader } from 'react-bootstrap';
 
 function App() {
   return (
-    <div >
+    <div  className='App'>
       <RouterProvider router={routes}></RouterProvider>
       {/* <ToastHeader /> */}
 
