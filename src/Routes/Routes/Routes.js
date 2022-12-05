@@ -51,7 +51,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/premium/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/corses-catagories/${params.id}`),
+                loader: ({ params }) => fetch(`https://go-learn-server-mr-rahman786.vercel.app/corses-catagories/${params.id}`),
                 element: <PrivateRoute><Premium></Premium></PrivateRoute>
             },
             {

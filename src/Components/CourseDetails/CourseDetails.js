@@ -22,7 +22,7 @@ const CourseDetails = () => {
     const [corses, setCorses] = useState([]);
     const { img, details, title } = corses;
     useEffect(() => {
-        fetch(`http://localhost:5000/corses-catagories/${id}`)
+        fetch(`https://go-learn-server-mr-rahman786.vercel.app/corses-catagories/${id}`)
             .then(res => res.json())
             .then(data => setCorses(data))
     }, [id])

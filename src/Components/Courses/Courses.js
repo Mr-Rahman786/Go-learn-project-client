@@ -8,7 +8,7 @@ import './Courses.css';
 const Courses = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/corses-catagories')
+        fetch('https://go-learn-server-mr-rahman786.vercel.app/corses-catagories')
             .then(res => res.json())
         .then(data=>setCourses(data))
     },[])
